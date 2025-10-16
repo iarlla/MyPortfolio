@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/img/maquina-de-cafe.png">
+    <title>Iarla Silva | Portfólio</title>
+    <style>
+        /* CSS Reset & Fonts */
+        /*VERDE ESCURO        
+        :root {
+            --primary-color: #1c1e1a; 
+            --secondary-color: #2a2d24; 
+            --text-color: #e8e6e3; 
+            --accent-color: #8A9A5B; 
+            --border-color: #4a4d42;
+        }
+        */
+        /*AZUL ESCURO*/
+        :root {
+            --primary-color: #0d1117;
+            --secondary-color: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* General Styling */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; }
+        h3 { font-size: 1.2rem; color: #fff; }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background-color: var(--secondary-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-links a {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 0;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .experience-item p {
+            margin: 10px 0 0 0;
+        }
+
+        .experience-item span {
+            display: block;
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        /* Competencies Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            background-color: var(--secondary-color);
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .project {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .project .project-tech {
+            font-style: italic;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-color);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer .contact-info span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer .social-links a {
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+        
+        .footer .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplificando para o exemplo. Pode ser substituído por um menu hamburguer */
+            }
+            .hero { padding: 60px 20px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">Iarla Silva</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#sobre-mim">Sobre</a></li>
+                    <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#competencias">Competências</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <img src="public/img/perfilimage.png" alt="Foto de Iarla Silva">
+            <h1>Iarla Silva</h1>
+            <p class="subtitle">Engenheira de Software | Cloud | Dados & IA</p>
+            <p>Recém-formada em Engenharia de Software com experiência prática em Governança de TIC, Análise de Dados e desenvolvimento full-stack. Apaixonada por criar soluções de software robustas, eficientes e inovadoras, com foco em experiências de usuário de alta qualidade.</p>
+            <div class="hero-links">
+                <a href="https://www.linkedin.com/in/iarla-silva-828679181/" target="_blank">LinkedIn</a>
+                |
+                <a href="https://github.com/iarlla" target="_blank">GitHub</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="sobre-mim">
+                <h2>Sobre Mim</h2>
+                <p>
+                    Olá! Sou Iarla, uma Engenheira de Software com uma base sólida em todo o ciclo de vida de desenvolvimento de software (SDLC), desde o planejamento e levantamento de requisitos até a implantação e manutenção. Minha jornada acadêmica e profissional me proporcionou uma visão ampla e integrada da tecnologia.
+                </p>
+                <p>
+                    Com experiência no setor público em <strong>Governança de TIC</strong>, adquiri uma perspectiva única sobre a aplicação da tecnologia em ambientes regulados, atuando em processos de licitação e análise de documentação técnica. Além disso, minha paixão por dados me levou a trabalhar com <strong>Google Analytics</strong>, gerando insights estratégicos para otimizar a presença digital de empresas.
+                </p>
+            </section>
+
+            <section id="experiencia">
+                <h2>Experiência Profissional</h2>
+                <div class="experience-item">
+                    <h3>Estagiária do Núcleo de Tecnologia da Informação</h3>
+                    <span>Fevereiro de 2024 - Presente</span>
+                    <p>Atuação multifacetada iniciando como Desenvolvedora PHP/Laravel, migrando para Suporte Técnico Nível 1 e atualmente focada em Governança de TIC Pública, auxiliando em licitações e elaboração de termos de referência.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Estagiária de Google Analytics | P2P Inteligência</h3>
+                    <span>Maio de 2020 - Setembro de 2020</span>
+                    <p>Análise de dados de empresas para gerar relatórios com insights acionáveis e propostas de estratégias para melhorar a presença digital dos clientes.</p>
+                </div>
+            </section>
+
+            <section id="competencias">
+                <h2>Competências e Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Cloud, Infraestrutura & Redes</h3>
+                        <ul>
+                            <li>AWS</li><li>Azure</li><li>IaaS</li><li>PaaS</li><li>SaaS</li><li>Virtualização</li><li>Contêineres</li><li>TCP/IP</li><li>VLAN</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Linguagens & Frameworks</h3>
+                        <ul>
+                           <li>Python</li><li>Java</li><li>Javascript</li><li>Node.js</li><li>PHP</li><li>Laravel</li><li>HTML</li><li>CSS</li><li>SQL</li><li>NoSQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Desenvolvimento & DevOps</h3>
+                        <ul>
+                            <li>Git</li><li>GitHub</li><li>SDLC</li><li>CI/CD</li><li>POO</li><li>MVC</li><li>SCRUM</li><li>KANBAN</li><li>Agile</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Dados, IA & Machine Learning</h3>
+                        <ul>
+                            <li>Machine Learning</li><li>Deep Learning</li><li>LLM</li><li>TensorFlow</li><li>PyTorch</li><li>ETL/ELT</li><li>MySQL</li><li>Redes Neurais</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projetos">
+                <h2>Projetos em Destaque</h2>
+                <div class="project">
+                    <h3>Aplicativo Móvel para Mercados de Agricultores Locais</h3>
+                    <p>Liderei o projeto de design e desenvolvimento de um aplicativo mobile focado em melhorar a navegação e a jornada do usuário em mercados locais, incluindo pesquisa, wireframing e prototipagem.</p>
+                    <p class="project-tech">Tecnologias: React Native, Firebase, Figma.</p>
+                </div>
+                 <div class="project">
+                    <h3>Desenvolvimento de Sites e Aplicações</h3>
+                    <p>Projetei e desenvolvi mais de 3 sites e aplicações do início ao fim, aplicando conhecimentos em front-end, back-end e banco de dados para criar soluções completas e funcionais.</p>
+                    <p class="project-tech">Tecnologias: HTML, CSS, Javascript, PHP, MySQL.</p>
+                </div>
+            </section>
+            
+            <section id="formacao">
+                <h2>Formação & Certificações</h2>
+                <div class="experience-item">
+                     <h3>Bacharelado em Engenharia de Software</h3>
+                     <span>Conclusão Prevista: Dezembro de 2025</span>
+                     <p>Ênfase em Interatividade Humano-Computador, Comunicação Visual e Testes de Usabilidade.</p>
+                </div>
+                 <div class="experience-item">
+                     <h3>Certificações</h3>
+                     <p>ITIL® 4 Foundation, LPIC-1: Linux Administrator, SCRUM Foundation.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer" id="contato">
+        <div class="container">
+            <h2>Vamos Conversar!</h2>
+            <p>Estou sempre aberta a novas oportunidades e desafios. Se você gostou do meu trabalho ou quer discutir um projeto, entre em contato!</p>
+            <div class="contact-info">
+                 <span>✉️ iarlaspam@gmail.com</span>
+                 <span>📍 Brasília, DF</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/iarla-silva-828679181/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/iarlla" target="_blank">GitHub</a> |
+                <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1187534U8" target="_blank">Currículo Lattes</a>
+            </div>
+            <p class="copyright">
+                © 2025 - Desenvolvido por Iarla Silva
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
